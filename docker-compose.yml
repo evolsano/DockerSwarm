@@ -1,0 +1,10 @@
+version: '3'
+services:
+  node:
+    image: volseona/demo-node-app
+#    container_name: demo-node
+#    restart: always
+    deploy:
+      replicas: 3
+    ports:
+      - 80:8081

@@ -47,7 +47,7 @@ docker swarm init
 
 Join Docker Swarm. Copy the command from the manager after docker swarm init.
 ```
-docker swarm join-token
+docker swarm join --token <token> <ip:port>
 ```
 
 Deploy containers
@@ -57,5 +57,15 @@ docker stack deploy -c docker-deployment.yml node
 
 Check deployment
 ```
-docker node services node
+docker node ls
+```
+
+View all containers
+```
+docker node ps $(docker node ls -q)
+```
+
+Remove deployment
+```
+docker stack rm <name>
 ```
